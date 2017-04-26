@@ -1,27 +1,20 @@
 {
-  "name": "sfeercaptain",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "dependencies": {
-    "express": "^4.15.2",
-    "mongodb": "^2.2.26",
-    "mongoose": "^4.9.6",
-    "nodemon": "^1.11.0"
-  },
-  "devDependencies": {},
+  "name": "sfeergroep",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/nodemon app.js"
+    "start": "nodemon ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HannaWalgrave/sfeercaptain.git"
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/HannaWalgrave/sfeercaptain/issues"
-  },
-  "homepage": "https://github.com/HannaWalgrave/sfeercaptain#readme"
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
