@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  if success
+    section.success
+    h2 Validation success!
+  else
+    form(action='',method='post')
+      form(method='POST' action='/register')
+        div
+          label(for='naam') Naam:
+          input(type='text', placeholder='Naam' name='naam')
+        div
+          label(for='leeftijd') Leeftijd:
+          input(type='text', placeholder='' name='leeftijd')
+        div
+          label(for='email') Email:
+          input(type='email', placeholder='name@email.com' name='email')
+        div
+          p Hebt u een seizoenspas?
+          label(for= 'seizoen') ja
+          input(type='radio' name='seizoen')
+          label(for= 'seizoen') nee
+          input(type='radio' name='seizoen')
+        button(type='submit') Register
+    if errors
+      section.errors
+        ul
+          each error in errors
+            li= error.msg
+

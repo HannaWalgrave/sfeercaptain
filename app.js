@@ -1,4 +1,6 @@
 var express = require('express');
+var expressvalidator = require('express-validator');
+var expressSession = require('express-session');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -19,8 +21,10 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressvalidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSession({secret: 'max' , saveUninitialized: false , resave: false}))
 
 app.use('/', index);
 app.use('/users', users);
