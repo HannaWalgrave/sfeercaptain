@@ -15,5 +15,18 @@
     "morgan": "~1.8.1",
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HannaWalgrave/sfeercaptain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HannaWalgrave/sfeercaptain/issues"
+  },
+  "homepage": "https://github.com/HannaWalgrave/sfeercaptain#readme",
+  "description": ""
 }
