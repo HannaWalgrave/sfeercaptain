@@ -4,6 +4,13 @@
   background-size: cover;
   height: 100vh; }
 
+.seizoenspas {
+  color: black; }
+
+header {
+  display: flex;
+  justify-content: center; }
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #fff8f2; }
