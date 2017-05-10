@@ -7,6 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
+var mongoose = require('mongoose');
+
+var db = mongoose.connect('localhost:27017/test');
 
 
 
@@ -26,6 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressvalidator());
 app.use(cookieParser());
+app.use(expressSession({secret: 'topsecret', saveUninitialized: false, resave: false}));
 app.use(sassMiddleware({
     src: path.join(__dirname, 'public'),
     dest: path.join(__dirname, 'public'),
