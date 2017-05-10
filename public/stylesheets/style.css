@@ -9,6 +9,7 @@ body {
   background-color: #fff8f2; }
 
 a {
+<<<<<<< HEAD
   color: #ffff00;
   text-decoration: none;
   border: #ffff00 solid 2px;
@@ -26,11 +27,21 @@ p {
   color: #ffff00;
   font-size: 1.3em;
   margin-top: 1em; }
+=======
+<<<<<<< HEAD
+  color: #00B7FF;
+
+
+  background-color: yellow; }
+=======
+  color: #ffff00; }
+>>>>>>> ec4b901762ebf510e96b7d8b3a2b00bfef7f8529
 
 .container {
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center; }
+>>>>>>> 21e08e24492c4e152f027529ad78f67dceccbf40
 
 /*# sourceMappingURL=style.css.map */
