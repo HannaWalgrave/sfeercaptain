@@ -28,10 +28,10 @@ router.get('/register', function(req, res, next){
 
 router.post('/register',function(req, res, next){
 
-   /* req.check('naam' , 'Je moet een naam invullen').notEmpty();
+   /*req.check('naam' , 'Je moet een naam invullen').notEmpty();
     req.check('email' , 'invalid email adress').isEmail();
     req.check('email' , 'Mag niet leeg zijn').notEmpty();
-    req.check('leeftijd' , 'Moet een nummer zijn').isNumeric().notEmpty();
+    req.check('leeftijd' , 'Moet een nummer zijn').isNumeric().notEmpty();*/
 
     var item = {
         naam: req.body.naam,
@@ -51,7 +51,7 @@ router.post('/register',function(req, res, next){
             req.session.success = true;
             data.save();
             /*res.redirect('/loggedInUser');*/
-        /*}*/
+        }
 });
 
 
