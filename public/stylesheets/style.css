@@ -4,12 +4,6 @@ body {
   background-color: #fff8f2; }
 
 a {
-<<<<<<< HEAD
-  color: #00B7FF;
-
-
-  background-color: yellow; }
-=======
   color: #ffff00; }
 
 .container {
@@ -17,6 +11,5 @@ a {
   justify-content: center;
   flex-flow: column;
   align-items: center; }
->>>>>>> 21e08e24492c4e152f027529ad78f67dceccbf40
 
 /*# sourceMappingURL=style.css.map */
