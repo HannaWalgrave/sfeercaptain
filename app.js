@@ -7,7 +7,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
-var mongoose = require('mongoose');
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -33,7 +33,7 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('localhost:27017/test');
+
 
 app.use('/', index);
 app.use('/users', users);
