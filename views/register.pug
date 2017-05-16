@@ -3,11 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  a(href='/get-data') getdata
+
   if success
     section.success
     h2 Validation success!
   else
-    form(action='',method='post')
+    form(action='/insert',method='post')
       form(method='POST' action='/register')
         div
           label(for='naam') Naam:
@@ -30,4 +32,3 @@ block content
         ul
           each error in errors
             li= error.msg
-

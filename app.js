@@ -9,9 +9,6 @@ var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 var mongoose = require('mongoose');
 
-var db = mongoose.connect('localhost:27017/test');
-
-
 
 var index = require('./routes/index');
 var users = require('./routes/users');
