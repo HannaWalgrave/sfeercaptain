@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  if message.length > 0
+    div#alert=message
+  form(action='/login', method='post')
+    div#naam
+      label(for='naam') Naam:
+      input(type='text', placeholder='Naam' name='naam')
+    div#email
+      label(for='email') Email:
+      input(type='email', placeholder='name@email.com' name='email')
+    button(type='submit') Login

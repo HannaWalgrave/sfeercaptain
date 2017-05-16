@@ -8,6 +8,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var flash = require('connect-flash');
 
 
 var index = require('./routes/index');
@@ -35,7 +37,19 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
+require('./config/passport')(passport);
+
+var configDB = require('./config/database.js');
+mongoose.connect(configDB.url);
+
+var db = mongoose.connection;
+db.once('open',function(){
+    console.log("gelukt");
+});
 
 app.use('/', index);
 app.use('/users', users);
