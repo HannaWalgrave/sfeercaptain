@@ -4,20 +4,23 @@ block content
   h1= title
   p Welcome to #{title}
 
-  form(action='/register',method='post')
-    div#naam
-      label(for='naam') Naam:
-      input(type='text', placeholder='Naam' name='naam')
-    div#email
-      label(for='email') Email:
-      input(type='email', placeholder='name@email.com' name='email')
-    div#age
-      label(for='age') Leeftijd:
-      input(type='number', name='age')
-    div#seizoen
-      p Hebt u een seizoenspas?
-      label(for= 'seizoen') ja
-      input(type='radio' name='seizoen')
-      label(for= 'seizoen') nee
-      input(type='radio' name='seizoen')
-    button(type='submit') Register
+
+  header
+    h1 registreren
+    form(action='/register',method='post')
+      div#naam
+        label(for='naam') Naam:
+        input(type='text', placeholder='Naam' name='naam')
+      div#email
+        label(for='email') Email:
+        input(type='email', placeholder='name@email.com' name='email')
+      div#age
+        label(for='age') Leeftijd:
+        input(type='number', name='age')
+      div#seizoen
+        p Hebt u een seizoenspas?
+        label(for= 'seizoen') ja
+        input(type='radio' name='seizoen')
+        label(for= 'seizoen') nee
+        input(type='radio' name='seizoen')
+      button(type='submit') Register
