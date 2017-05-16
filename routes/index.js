@@ -7,24 +7,33 @@ var expressvalidator = require('express-validator');
 
 //mongoose.connect('localhost:27017/userData');
 
-var users = require('../models/users');
+var user = require('../models/users');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Sfeercaptain' });
 });
 
+
+/*LOGIN*/
 router.get('/login',function(req, res, next) {
     res.render('login.pug', {message : req.flash('loginMessage') });
 });
 
+router.post('/login', passport.authenticate(['local-login'], {
+    successRedirect:'/loggedInUser',
+    failureRedirect: '/login',
+    failureFlash : true
+}));
+
+router.get('/loggedInUser', isLoggedIn, function(req, res) {
+    res.render('loggedInUser.pug', { user: req.user ,name: req.user.normal.naam});
+});
+
+/*SIGNUP*/
 router.get('/register', function(req, res, next){
   res.render('register',{ title: 'Sfeercaptain' ,message: req.flash('signupMessage')});
 
-});
-
-router.get('/loggedInUser', /*isLoggedIn,*/ function(req, res) {
-    res.render('loggedInUser.pug', { user: req.user , name: req.user.naam});
 });
 
 router.post('/register', passport.authenticate('local-signup', {
@@ -33,10 +42,27 @@ router.post('/register', passport.authenticate('local-signup', {
     failureFlash : true
 }));
 
-router.post('/login', passport.authenticate(['local-login'], {
-    successRedirect:'/loggedInUser',
-    failureRedirect: '/login',
+/*ADMIN*/
+
+router.get('/admin' ,function (req,res,next){
+    res.render('admin.pug');
+});
+
+router.post('/admin', passport.authenticate(['admin-login'], {
+    successRedirect:'/loggedAdmin',
+    failureRedirect: '/admin',
     failureFlash : true
 }));
 
+router.get('/loggedAdmin', isLoggedIn, function(req, res) {
+    res.render('loggedAdmin.pug', { user: req.user ,AdminName: req.user.admin.name});
+});
+
+
 module.exports = router;
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/login');
+}

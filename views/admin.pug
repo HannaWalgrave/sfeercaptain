@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  form(action='/admin', method='post')
+    div#adnaam
+      label(for='adnaam') naam
+      input(type='text', name='adnaam')
+    div#pass
+      label(for='pass') password
+      input(type='text', name='pass')
+    button(type='submit') Login

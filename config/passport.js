@@ -19,7 +19,7 @@ module.exports = function(passport) {
         },
         function(req, email, naam, done) {
             process.nextTick(function() {
-                User.findOne({ 'email':  email }, function(err, user) {
+                User.findOne({ 'normal.email':  email }, function(err, user) {
                     if (err) {
                         console.log(err);
                         return done(err);
@@ -28,9 +28,9 @@ module.exports = function(passport) {
                         return done(null, false,req.flash('signupMessage', 'That email is already taken.'));
                     } else {
                         var newUser = new User();
-                        newUser.email = email;
-                        newUser.naam = naam;
-                        newUser.age = req.param('age');
+                        newUser.normal.email = email;
+                        newUser.normal.naam = naam;
+                        newUser.normal.age = req.param('age');
                         newUser.save(function(err) {
                             if (err){
                                 console.log(err);
@@ -41,19 +41,34 @@ module.exports = function(passport) {
                 });
             });
         }));
-//LOGIN
+//LOGIN users
     passport.use('local-login', new LocalStrategy({
             usernameField: 'email',
             passwordField: 'naam',
             passReqToCallback: true
         },
         function(req, email, password, done) {
-            User.findOne({ 'email':  email }, function(err, user) {
+            User.findOne({ 'normal.email':  email }, function(err, user) {
                 if (err){
                     console.log(err);
                     return done(err);}
                 if (!user){
                     console.log(err);
+                    return done(null, false,req.flash( 'loginMessage', 'No user found.'));}
+                return done(null, user);
+            });
+        }));
+//LOGIN ADMIN
+    passport.use('admin-login', new LocalStrategy({
+            usernameField: 'adnaam',
+            passwordField: 'pass',
+            passReqToCallback: true
+        },
+        function(req, adnaam, pass, done) {
+            User.findOne({ 'admin.pass':  pass }, function(err, user) {
+                if (err){
+                    return done(err);}
+                if (!user){
                     return done(null, false,req.flash( 'loginMessage', 'No user found.'));}
                 return done(null, user);
             });
