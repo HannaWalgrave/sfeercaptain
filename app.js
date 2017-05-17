@@ -10,12 +10,17 @@ var sassMiddleware = require('node-sass-middleware');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
-
+var socket_io = require('socket.io');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+// Socket.io
+var io           = socket_io();
+app.io           = io;
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -70,6 +75,16 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/index.pug');
+});
+
+// socket.io events
+io.on( "connection", function( socket )
+{
+    console.log( "A user connected" );
 });
 
 module.exports = app;

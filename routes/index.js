@@ -5,8 +5,6 @@ var schema = mongoose.Schema;
 var passport = require('passport');
 var expressvalidator = require('express-validator');
 
-//mongoose.connect('localhost:27017/userData');
-
 var user = require('../models/users');
 
 /* GET home page. */
