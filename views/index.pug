@@ -6,11 +6,12 @@ block content
       h1= title
       p Welcome to #{title}
       div
-        img(src=("http://placehold.it/150x150"))
+        img(src="/images/logo.svg" height="150" width="150")
       p KV Mechelen
-      a(href='/register') register
-      a(href='/login') login
-      a(href='/admin') admin
+      div.login
+        a.borderLink(href='/register') register
+        a.borderLink(href='/login') login
+      a.adminLink(href='/admin') hier aanmelden als sfeercaptain
 
 
 

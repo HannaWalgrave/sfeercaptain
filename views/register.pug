@@ -1,26 +1,26 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-
-
   header
     h1 registreren
-    form(action='/register',method='post')
-      div#naam
-        label(for='naam') Naam:
-        input(type='text', placeholder='Naam' name='naam')
-      div#email
-        label(for='email') Email:
-        input(type='email', placeholder='name@email.com' name='email')
-      div#age
-        label(for='age') Leeftijd:
-        input(type='number', name='age')
-      div#seizoen
-        p Hebt u een seizoenspas?
-        label(for= 'seizoen') ja
-        input(type='radio' name='seizoen')
-        label(for= 'seizoen') nee
-        input(type='radio' name='seizoen')
-      button(type='submit') Register
+
+
+
+
+  form.register(action='/register',method='post')
+    div#naam.input
+      label(for='naam') Naam:
+      input(type='text', placeholder='Naam' name='naam')
+    div#email.input
+      label(for='email') Email:
+      input(type='email', placeholder='name@email.com' name='email')
+    div#age.input
+      label(for='age') Leeftijd:
+      input(type='number', name='age')
+    div#seizoen.input
+      p Hebt u een seizoenspas?
+      label(for= 'seizoen') ja
+      input(type='radio' name='seizoen')
+      label(for= 'seizoen') nee
+      input(type='radio' name='seizoen')
+    button(type='submit') Register

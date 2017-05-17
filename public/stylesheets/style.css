@@ -3,13 +3,46 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh; }
+  .outer-container h1 {
+    color: #ffff00; }
+  .outer-container p {
+    color: #ffff00; }
+  .outer-container .adminLink {
+    text-decoration: underline;
+    font-size: 0.8em; }
+  .outer-container .login {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0.5em; }
+  .outer-container .borderLink {
+    border: solid #ffff00 3px;
+    margin: 0.3em; }
 
 .seizoenspas {
   color: black; }
 
 header {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  background-image: url("../images/header.png");
+  align-content: center; }
+
+.register {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-left: 2em;
+  margin-right: 2em; }
+
+.input {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid red; }
+
+input {
+  border: none;
+  background-color: #fff8f2; }
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
