@@ -1,3 +1,3 @@
 module.exports = {
-    url: 'mongodb://localhost/userData'
+    url: 'mongodb://Project2:Sfeercaptain@ds161518.mlab.com:61518/userdata'
 };
