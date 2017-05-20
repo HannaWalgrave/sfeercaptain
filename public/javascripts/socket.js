@@ -12,6 +12,12 @@ document.querySelector('#Function1').addEventListener("click", function (e) {
     e.preventDefault;
 });
 
+document.querySelector('#Function2').addEventListener("click", function (e) {
+    primus.write({message: 'function2'});
+    //console.log(id);
+    e.preventDefault;
+});
+
 primus.on("data", function (data) {
     console.log(data);
 });

@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressvalidator());
 app.use(cookieParser());
-app.use(expressSession({secret: 'topsecret', saveUninitialized: false, resave: false}));
+app.use(expressSession({secret: 'topsecret'}));
 app.use(sassMiddleware({
     src: path.join(__dirname, 'public'),
     dest: path.join(__dirname, 'public'),
