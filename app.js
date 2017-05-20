@@ -10,16 +10,12 @@ var sassMiddleware = require('node-sass-middleware');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
-var socket_io = require('socket.io');
+var primus = require('primus');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
-// Socket.io
-var io = socket_io();
-app.io = io;
 
 
 // view engine setup
@@ -81,20 +77,5 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.pug');
 });
 
-var clients = 0;
-
-// socket.io events
-io.on( "connection", function( socket )
-{
-    console.log( "A user connected" );
-    clients++;
-    io.sockets.emit('broadcast',{ description: clients + ' clients connected!'});
-
-    socket.on('disconnect', function () {
-        clients--;
-        io.sockets.emit('broadcast',{ description: clients + ' clients connected!'});
-        console.log('A user disconnected');
-    });
-});
 
 module.exports = app;

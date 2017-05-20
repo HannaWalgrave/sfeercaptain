@@ -53,7 +53,7 @@ router.post('/admin', passport.authenticate(['admin-login'], {
 }));
 
 router.get('/loggedAdmin', isLoggedIn, function(req, res) {
-    res.render('loggedAdmin.pug', { user: req.user ,AdminName: req.user.admin.name});
+    res.render('loggedAdmin.pug', { user: req.user , AdminName: req.user.admin.name});
 });
 
 
