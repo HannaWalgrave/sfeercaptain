@@ -6,12 +6,17 @@ primus = Primus.connect("", {
     }
 });
 
-var image ="images/logo.png";
+
+var elem = document.createElement("img");
+elem.setAttribute("src", "images/logo.png");
+elem.setAttribute("height", "768");
+elem.setAttribute("width", "1024");
+elem.setAttribute("alt", "Flower");
 
 primus.on("data", function (data) {
     if(data.message != undefined) {
         if(data.message == 'function1') {
-            document.querySelector("#functionShow").append("<img src="+image+"/>");
+            document.querySelector("#functionShow").append(elem);
         } else {
             console.log('i fucked up');
         }
