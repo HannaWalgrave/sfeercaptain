@@ -22,12 +22,21 @@ app.set('port', port);
 var server = http.createServer(app);
 
 /**
- * socket io
+ * Primus
  */
 
-var io = app.io;
-io.listen(server);
+var Primus = require('primus');
+var Primus = new Primus(server);
+Primus.on('connection', function (spark) {
+    console.log("spark connected")
+    spark.write('hello connnection');
 
+    spark.on('data',function(data){
+
+        console.log(data);
+        Primus.write(data);
+    })
+});
 
 /**
  * Listen on provided port, on all network interfaces.

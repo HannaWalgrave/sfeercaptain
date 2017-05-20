@@ -6,14 +6,11 @@ primus = Primus.connect("", {
     }
 });
 
-document.querySelector('#Function1').addEventListener("click", function (e) {
-    alert('hi mom');
-
-    primus.write({id: 'this works'});
-    console.log(id);
-    e.preventDefault;
-});
-
 primus.on("data", function (data) {
+    if(data.id!=undefined)
+    {
+
+        console.log('the id has reached the profile page');
+    }
     console.log(data);
 });
