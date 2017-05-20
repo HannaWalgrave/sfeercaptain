@@ -11,11 +11,18 @@ var elem = document.createElement("img");
 elem.setAttribute("src", "images/logo.png");
 elem.setAttribute("alt", "logo");
 
+var elem2 = document.createElement("img");
+elem2.setAttribute("src", "images/header.png");
+elem2.setAttribute("alt", "logo");
+
 primus.on("data", function (data) {
     if(data.message != undefined) {
         if(data.message == 'function1') {
             document.querySelector("#functionShow").append(elem);
-        } else {
+        }if(data.message == 'function2') {
+            document.querySelector("#functionShow").append(elem2);
+        }
+        else {
             console.log('i fucked up');
         }
     }
