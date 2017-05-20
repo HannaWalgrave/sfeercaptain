@@ -2,18 +2,15 @@ extends layout
 
 block content
   header
-    h1 registreren
-
-
-
+    h1.pagename Registreren
 
   form.register(action='/register',method='post')
     div#naam.input
       label(for='naam') Naam:
-      input(type='text', placeholder='Naam' name='naam')
+      input(type='text', name='naam')
     div#email.input
       label(for='email') Email:
-      input(type='email', placeholder='name@email.com' name='email')
+      input(type='email', name='email')
     div#age.input
       label(for='age') Leeftijd:
       input(type='number', name='age')
@@ -23,4 +20,6 @@ block content
       input(type='radio' name='seizoen')
       label(for= 'seizoen') nee
       input(type='radio' name='seizoen')
-    button(type='submit') Register
+    button.submit(type='submit') Registreer
+
+
