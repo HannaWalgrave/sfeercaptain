@@ -50,6 +50,13 @@ input {
   margin-left: 0.5em;
   padding: 0.5em; }
 
+.containerbtn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column; }
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #fff8f2;
