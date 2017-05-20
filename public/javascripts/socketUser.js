@@ -6,11 +6,14 @@ primus = Primus.connect("", {
     }
 });
 
-primus.on("data", function (data) {
-    if(data.id!=undefined)
-    {
+var image ="images/logo.png";
 
-        console.log('the id has reached the profile page');
+primus.on("data", function (data) {
+    if(data.message != undefined) {
+        if(data.message == 'function1') {
+            document.querySelector("#functionShow").append("<img src="+image+"/>");
+        } else {
+            console.log('i fucked up');
+        }
     }
-    console.log(data);
 });
