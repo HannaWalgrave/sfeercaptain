@@ -9,9 +9,7 @@ primus = Primus.connect("", {
 
 var elem = document.createElement("img");
 elem.setAttribute("src", "images/logo.png");
-elem.setAttribute("height", "768");
-elem.setAttribute("width", "1024");
-elem.setAttribute("alt", "Flower");
+elem.setAttribute("alt", "logo");
 
 primus.on("data", function (data) {
     if(data.message != undefined) {

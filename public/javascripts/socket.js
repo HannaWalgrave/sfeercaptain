@@ -7,8 +7,6 @@ primus = Primus.connect("", {
 });
 
 document.querySelector('#Function1').addEventListener("click", function (e) {
-    alert('hi mom');
-
     primus.write({message: 'function1'});
     //console.log(id);
     e.preventDefault;
