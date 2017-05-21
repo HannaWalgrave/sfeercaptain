@@ -188,13 +188,12 @@ primus.on("data", function (data) {
                 navigator.vibrate(1000);
                 document.getElementById('timertext').innerHTML = "We beginnen in: ";
                 document.getElementById('timer_div').innerHTML = --seconds_left;
+
                 if (seconds_left <= 0)
                 {
                     document.querySelector("#functionShow").append(elem2);
                     document.getElementById('timer_div').innerHTML = "";
                     document.getElementById('timertext').innerHTML = "";
-
-                    setTimeout(function () { document.querySelector("#functionShow").removeChild(elem2); },5000);
 
                     var myShakeEvent = new Shake({
                         threshold: 1
@@ -209,9 +208,12 @@ primus.on("data", function (data) {
                     setTimeout(function () {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
-                    }, 10000);
+                        document.querySelector("#functionShow").removeChild(elem2);
+                        myShakeEvent.stop();
+                    }, 15000);
                     clearInterval(interval);
                 }
+
             }, 1000);
 
         }

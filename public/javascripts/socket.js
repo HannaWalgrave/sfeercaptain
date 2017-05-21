@@ -148,7 +148,6 @@ function colorshow () {
 }
 
 
-
 document.querySelector('#Function1').addEventListener("click", function (e) {
     primus.write({message: 'function1'});
     navigator.vibrate(1000);
@@ -161,7 +160,11 @@ document.querySelector('#Function1').addEventListener("click", function (e) {
 
 document.querySelector('#Function2').addEventListener("click", function (e) {
     primus.write({message: 'function2'});
-    //console.log(id);
+    navigator.vibrate(1000);
+    color();
+    setTimeout(function () {
+        colorshow();
+    },15000);
     e.preventDefault;
 });
 
