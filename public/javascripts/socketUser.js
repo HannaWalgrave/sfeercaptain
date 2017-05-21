@@ -196,23 +196,7 @@ primus.on("data", function (data) {
                     document.getElementById('timer_div').innerHTML = "";
                     document.getElementById('timertext').innerHTML = "";
 
-                    /*var x;
 
-                    function changecolors() {
-                        x = 1;
-                        setInterval(change, 1000);
-                    }
-                    function change() {
-                        if (x === 1) {
-                            color = "red";
-                            x = 2;
-                        } else {
-                            color = "yellow";
-                            x = 1;
-                        }
-                        document.body.style.background = color;
-                    }
-                    changecolors();*/
 
 
                     var myShakeEvent = new Shake({
@@ -222,10 +206,23 @@ primus.on("data", function (data) {
                     window.addEventListener('shake', shakeEventDidOccur, false);
                     function shakeEventDidOccur () {
                         //put your own code here etc.
-                        var colors=["yellow","red"];
-                        var rand=Math.floor(Math.random() * (colors.length-1)) + 0;
-                        var color=colors[rand];
-                        document.body.style.background = color;
+                        var x;
+
+                        function changecolors() {
+                            x = 1;
+                            setInterval(change, 1000);
+                        }
+                        function change() {
+                            if (x === 1) {
+                                color = "red";
+                                x = 2;
+                            } else {
+                                color = "yellow";
+                                x = 1;
+                            }
+                            document.body.style.background = color;
+                        }
+                        changecolors();
                     }
 
                     setTimeout(function () {
