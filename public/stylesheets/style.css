@@ -57,9 +57,9 @@ input {
 
 .btn {
   border: solid red 3px;
-  height: 70px;
-  width: 70px;
-  margin: 0.3em;
+  height: 100px;
+  width: 30%;
+  margin: 0.2em;
   border-radius: 5px;
   background-color: #fff8f2; }
 
