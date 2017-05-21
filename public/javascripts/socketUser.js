@@ -149,7 +149,7 @@ elem.setAttribute("src", "images/logo.png");
 elem.setAttribute("alt", "logo");
 
 var elem2 = document.createElement("img");
-elem2.setAttribute("src", "images/function2.gif");
+elem2.setAttribute("src", "images/voetballer.gif");
 elem2.setAttribute("alt", "logo");
 
 document.querySelector("#functionShow").append(emptyText);
@@ -195,8 +195,6 @@ primus.on("data", function (data) {
                     document.querySelector("header").style.visibility = "hidden";
                     document.getElementById('timer_div').innerHTML = "";
                     document.getElementById('timertext').innerHTML = "";
-
-
 
 
                     var myShakeEvent = new Shake({
