@@ -214,7 +214,6 @@ primus.on("data", function (data) {
                     }
                     changecolors();*/
 
-                    var colors=["yellow","red"];
 
                     var myShakeEvent = new Shake({
                         threshold: 1
@@ -223,6 +222,7 @@ primus.on("data", function (data) {
                     window.addEventListener('shake', shakeEventDidOccur, false);
                     function shakeEventDidOccur () {
                         //put your own code here etc.
+                        var colors=["yellow","red"];
                         var rand=Math.floor(Math.random() * (colors.length-1)) + 0;
                         var color=colors[rand];
                         document.body.style.background = color;
@@ -231,10 +231,11 @@ primus.on("data", function (data) {
                     setTimeout(function () {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
-                        document.body.style.background = "#FFFFFF";
+
                         document.querySelector("header").style.visibility = "visible";
-                        changecolors();
+                        //changecolors();
                         myShakeEvent.stop();
+                        document.body.style.background = "#FFFFFF";
                     }, 15000);
                     clearInterval(interval);
                 }
