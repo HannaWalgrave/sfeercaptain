@@ -208,7 +208,7 @@ primus.on("data", function (data) {
 
                         function changecolors() {
                             x = 1;
-                            setInterval(change, 1000);
+                            var c =setInterval(change, 1000);
                         }
                         function change() {
                             if (x === 1) {
@@ -221,12 +221,12 @@ primus.on("data", function (data) {
                             document.body.style.background = color;
                         }
                         changecolors();
+
                     }
 
                     setTimeout(function () {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
-
                         document.querySelector("header").style.visibility = "visible";
                         //changecolors();
                         myShakeEvent.stop();
