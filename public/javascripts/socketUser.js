@@ -188,10 +188,11 @@ primus.on("data", function (data) {
                 navigator.vibrate(1000);
                 document.getElementById('timertext').innerHTML = "We beginnen in: ";
                 document.getElementById('timer_div').innerHTML = --seconds_left;
-
+                document.querySelector("#functionShow").append(elem2);
                 if (seconds_left <= 0)
                 {
-                    document.querySelector("#functionShow").append(elem2);
+                    document.querySelector("#functionShow").removeChild(elem2);
+
                     document.getElementById('timer_div').innerHTML = "";
                     document.getElementById('timertext').innerHTML = "";
 
@@ -202,13 +203,31 @@ primus.on("data", function (data) {
                     window.addEventListener('shake', shakeEventDidOccur, false);
                     function shakeEventDidOccur () {
                         //put your own code here etc.
-                        document.body.style.backgroundColor = "red";
+                        var x;
+
+                        function changecolors() {
+                            x = 1;
+                            setInterval(change, 1000);
+                        }
+
+                        function change() {
+                            if (x === 1) {
+                                color = "red";
+                                x = 2;
+                            } else {
+                                color = "yellow";
+                                x = 1;
+                            }
+
+                            document.body.style.background = color;
+                        }
+                       changecolors();
                     }
 
                     setTimeout(function () {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
-                        document.querySelector("#functionShow").removeChild(elem2);
+
                         myShakeEvent.stop();
                     }, 15000);
                     clearInterval(interval);
