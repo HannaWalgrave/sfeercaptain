@@ -11,6 +11,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 var primus = require('primus');
+var Shake = require('shake.js');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
