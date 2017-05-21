@@ -192,9 +192,29 @@ primus.on("data", function (data) {
                 if (seconds_left <= 0)
                 {
                     document.querySelector("#functionShow").removeChild(elem2);
-
+                    document.querySelector("header").style.visibility = "hidden";
                     document.getElementById('timer_div').innerHTML = "";
                     document.getElementById('timertext').innerHTML = "";
+
+                    /*var x;
+
+                    function changecolors() {
+                        x = 1;
+                        setInterval(change, 1000);
+                    }
+                    function change() {
+                        if (x === 1) {
+                            color = "red";
+                            x = 2;
+                        } else {
+                            color = "yellow";
+                            x = 1;
+                        }
+                        document.body.style.background = color;
+                    }
+                    changecolors();*/
+
+                    var colors=["yellow","red"];
 
                     var myShakeEvent = new Shake({
                         threshold: 1
@@ -203,31 +223,17 @@ primus.on("data", function (data) {
                     window.addEventListener('shake', shakeEventDidOccur, false);
                     function shakeEventDidOccur () {
                         //put your own code here etc.
-                        var x;
-
-                        function changecolors() {
-                            x = 1;
-                            setInterval(change, 1000);
-                        }
-
-                        function change() {
-                            if (x === 1) {
-                                color = "red";
-                                x = 2;
-                            } else {
-                                color = "yellow";
-                                x = 1;
-                            }
-
-                            document.body.style.background = color;
-                        }
-                       changecolors();
+                        var rand=Math.floor(Math.random() * (colors.length-1)) + 0;
+                        var color=colors[rand];
+                        document.body.style.background = color;
                     }
 
                     setTimeout(function () {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
-
+                        document.body.style.background = "#FFFFFF";
+                        document.querySelector("header").style.visibility = "visible";
+                        changecolors();
                         myShakeEvent.stop();
                     }, 15000);
                     clearInterval(interval);
