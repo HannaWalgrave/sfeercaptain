@@ -40,11 +40,11 @@ var seconds_left = 10;
 
 document.querySelector('#Function1').addEventListener("click", function (e) {
     primus.write({message: 'function1'});
+    navigator.vibrate(1000);
     color();
     setTimeout(function () {
         colorshow();
     },15000);
-    //console.log(id);
     e.preventDefault;
 });
 
