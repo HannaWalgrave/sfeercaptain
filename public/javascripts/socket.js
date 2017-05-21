@@ -148,7 +148,7 @@ function colorshow () {
 }
 
 var myShakeEvent = new Shake({
-    threshold: 15
+    threshold: 1
 });
 // start listening to device motion
 myShakeEvent.start();
