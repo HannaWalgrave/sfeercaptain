@@ -6,9 +6,45 @@ primus = Primus.connect("", {
     }
 });
 
+
+var div = document.querySelectorAll(".container");
+
+function color () {
+div[0].style.display = "none";
+div[1].style.display = "none";
+div[2].style.display = "none";
+div[3].style.display = "none";
+div[4].style.display = "none";
+div[5].style.display = "none";
+div[6].style.display = "none";
+div[7].style.display = "none";
+div[8].style.display = "none";
+
+}
+
+function colorshow () {
+    div[0].style.display = "flex";
+    div[1].style.display = "flex";
+    div[2].style.display = "flex";
+    div[3].style.display = "flex";
+    div[4].style.display = "flex";
+    div[5].style.display = "flex";
+    div[6].style.display = "flex";
+    div[7].style.display = "flex";
+    div[8].style.display = "flex";
+}
+
+var seconds_left = 10;
+
+
+
 document.querySelector('#Function1').addEventListener("click", function (e) {
     primus.write({message: 'function1'});
-    //console.log(id);
+    navigator.vibrate(1000);
+    color();
+    setTimeout(function () {
+        colorshow();
+    },15000);
     e.preventDefault;
 });
 

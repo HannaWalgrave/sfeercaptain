@@ -6,7 +6,6 @@ primus = Primus.connect("", {
     }
 });
 
-
 var elem = document.createElement("img");
 elem.setAttribute("src", "images/logo.png");
 elem.setAttribute("alt", "logo");
@@ -18,7 +17,24 @@ elem2.setAttribute("alt", "logo");
 primus.on("data", function (data) {
     if(data.message != undefined) {
         if(data.message == 'function1') {
-            document.querySelector("#functionShow").append(elem);
+            var seconds_left = 10;
+            var interval = setInterval(function() {
+                navigator.vibrate(1000);
+                document.getElementById('timer_div').innerHTML = --seconds_left;
+                if (seconds_left <= 0)
+                {
+                    document.getElementById('timer_div').innerHTML = "";
+                    document.querySelector("#functionShow").append(elem);
+                    setTimeout(function () {
+                        document.querySelector("#functionShow").removeChild(elem);
+
+                    }, 5000);
+                    clearInterval(interval);
+                }
+            }, 1000);
+
+
+
         }if(data.message == 'function2') {
             document.querySelector("#functionShow").append(elem2);
         }
