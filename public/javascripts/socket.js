@@ -160,12 +160,6 @@ function shakeEventDidOccur () {
     alert('Shake!');
 };
 
-
-//check if shake is supported or not.
-if(!("ondevicemotion" in window)){alert("Not Supported");}
-
-
-
 document.querySelector('#Function1').addEventListener("click", function (e) {
     primus.write({message: 'function1'});
     navigator.vibrate(1000);
