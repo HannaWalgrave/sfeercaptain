@@ -147,18 +147,7 @@ function colorshow () {
     div.style.display = "flex";
 }
 
-var myShakeEvent = new Shake({
-    threshold: 1
-});
-// start listening to device motion
-myShakeEvent.start();
-// register a shake event
-window.addEventListener('shake', shakeEventDidOccur, false);
-//shake event callback
-function shakeEventDidOccur () {
-    //put your own code here etc.
-    alert('Shake!');
-};
+
 
 document.querySelector('#Function1').addEventListener("click", function (e) {
     primus.write({message: 'function1'});
