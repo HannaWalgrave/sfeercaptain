@@ -6,10 +6,10 @@ primus = Primus.connect("", {
     }
 });
 
-var div = document.querySelectorAll(".container");
+var div = document.querySelector(".containerbtn");
 
 function color () {
-div[0].style.display = "none";
+/*div[0].style.display = "none";
 div[1].style.display = "none";
 div[2].style.display = "none";
 div[3].style.display = "none";
@@ -17,12 +17,13 @@ div[4].style.display = "none";
 div[5].style.display = "none";
 div[6].style.display = "none";
 div[7].style.display = "none";
-div[8].style.display = "none";
+div[8].style.display = "none";*/
+div.style.display = "none";
 
 }
 
 function colorshow () {
-    div[0].style.display = "flex";
+    /*div[0].style.display = "flex";
     div[1].style.display = "flex";
     div[2].style.display = "flex";
     div[3].style.display = "flex";
@@ -30,20 +31,11 @@ function colorshow () {
     div[5].style.display = "flex";
     div[6].style.display = "flex";
     div[7].style.display = "flex";
-    div[8].style.display = "flex";
+    div[8].style.display = "flex";*/
+
+    div.style.display = "flex";
 }
 
-$(document).ready(function() {
-    $.shake({
-        callback: function() {
-            yourFunction();
-        }
-    });
-});
-
-function yourFunction(){
-    document.body.style.backgroundColor = "yellow";
-};
 
 
 
