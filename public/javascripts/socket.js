@@ -34,8 +34,17 @@ function colorshow () {
     div[8].style.display = "flex";
 }
 
-var seconds_left = 10;
+function handleMotionEvent(event) {
 
+    var x = event.accelerationIncludingGravity.x;
+    var y = event.accelerationIncludingGravity.y;
+    var z = event.accelerationIncludingGravity.z;
+
+    // Do something awesome.
+    document.body.style.backgroundColor = "yellow";
+}
+
+window.addEventListener("devicemotion", handleMotionEvent, true);
 
 
 document.querySelector('#Function1').addEventListener("click", function (e) {

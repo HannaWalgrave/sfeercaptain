@@ -14,11 +14,6 @@ var elem2 = document.createElement("img");
 elem2.setAttribute("src", "images/header.png");
 elem2.setAttribute("alt", "logo");
 
-var myShakeEvent = new Shake({
-    threshold: 15, // optional shake strength threshold
-    timeout: 1000 // optional, determines the frequency of event generation
-
-});
 
 primus.on("data", function (data) {
     if(data.message != undefined) {
@@ -43,15 +38,9 @@ primus.on("data", function (data) {
 
         }if(data.message == 'function2') {
             document.querySelector("#functionShow").append(elem2);
-            myShakeEvent.start();
-            window.addEventListener('shake', shakeEventDidOccur, false);
 
             //function to call when shake occurs
-            function shakeEventDidOccur () {
-                document.body.style.backgroundColor = "yellow";
-                //put your own code here etc.
-                alert('shake!');
-            }
+
         }
         else {
             console.log('i fucked up');
