@@ -19,7 +19,7 @@ primus.on("data", function (data) {
         if(data.message == 'function1') {
             var seconds_left = 10;
             var interval = setInterval(function() {
-
+                navigator.vibrate(1000);
                 document.getElementById('timer_div').innerHTML = --seconds_left;
                 if (seconds_left <= 0)
                 {
