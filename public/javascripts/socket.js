@@ -6,7 +6,6 @@ primus = Primus.connect("", {
     }
 });
 
-
 var div = document.querySelectorAll(".container");
 
 function color () {
@@ -34,6 +33,17 @@ function colorshow () {
     div[8].style.display = "flex";
 }
 
+$(document).ready(function() {
+    $.shake({
+        callback: function() {
+            yourFunction();
+        }
+    });
+});
+
+function yourFunction(){
+    document.body.style.backgroundColor = "yellow";
+};
 
 
 

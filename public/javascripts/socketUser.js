@@ -39,7 +39,6 @@ primus.on("data", function (data) {
         }if(data.message == 'function2') {
             document.querySelector("#functionShow").append(elem2);
 
-            //function to call when shake occurs
 
         }
         else {
