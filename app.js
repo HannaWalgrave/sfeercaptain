@@ -14,6 +14,7 @@ var primus = require('primus');
 var Shake = require('shake.js');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var $ = require('jQuery');
 
 var app = express();
 
