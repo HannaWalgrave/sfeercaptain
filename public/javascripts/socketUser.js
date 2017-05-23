@@ -227,7 +227,7 @@ primus.on("data", function (data) {
                         }
                         changecolors(); */
 
-                        var colors = ['yellow', 'red'];
+                        var colors = ['#FFFF00', '#FF0000'];
                         var random_color = colors[Math.floor(Math.random() * colors.length)];
                         document.body.style.color = random_color;
                     }
