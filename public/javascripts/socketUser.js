@@ -215,7 +215,7 @@ primus.on("data", function (data) {
                     window.addEventListener('shake', shakeEventDidOccur, false);
                     function shakeEventDidOccur () {
                         //put your own code here etc.
-                        var x;
+                        /*var x;
 
                         function changecolors() {
                             x = 1;
@@ -236,18 +236,23 @@ primus.on("data", function (data) {
 
                             document.body.style.background = color;
                         }
-                        changecolors();
+                        changecolors();*/
+
+                        function flash() {
+                            var text = document.body;
+                            text.style.backgroundColor = (text.style.backgroundColor === 'red') ? 'yellow':'red';
+                        }
+                        var clr = setInterval(flash, 1000);
                     }
 
                     setTimeout(function () {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
                         document.querySelector("header").style.visibility = "visible";
-                        //changecolors();
+
                         myShakeEvent.stop();
                         document.body.style.background = "#FFFFFF";
                     }, 15000);
-
                     clearInterval(interval);
                 }
 
