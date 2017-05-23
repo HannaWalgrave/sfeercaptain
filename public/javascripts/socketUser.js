@@ -145,7 +145,7 @@ var t = document.createTextNode('geniet van de match');
 emptyText.appendChild(t);
 
 var elem = document.createElement("img");
-elem.setAttribute("src", "images/logo.png");
+elem.setAttribute("src", "images/klappen.gif");
 elem.setAttribute("alt", "logo");
 
 var elem2 = document.createElement("img");
@@ -204,7 +204,7 @@ primus.on("data", function (data) {
                     window.addEventListener('shake', shakeEventDidOccur, false);
                     function shakeEventDidOccur () {
                         //put your own code here etc.
-                        var x;
+                        /*var x;
 
                         function changecolors() {
                             x = 1;
@@ -214,14 +214,23 @@ primus.on("data", function (data) {
                             if (x === 1) {
                                 color = "red";
                                 x = 2;
-                            } else {
+                            }
+                            if (x === 2){
                                 color = "yellow";
                                 x = 1;
                             }
+                            else {
+                                color = "#FFFFFF";
+                            }
+
                             document.body.style.background = color;
                         }
-                        changecolors();
-
+                        changecolors(); */
+                        var element = document.getElementById("box");
+                        var r = getRandomInt(0, 255);
+                        var g = getRandomInt(0, 255);
+                        var b = getRandomInt(0, 255);
+                        element.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
                     }
 
                     setTimeout(function () {
@@ -232,6 +241,7 @@ primus.on("data", function (data) {
                         myShakeEvent.stop();
                         document.body.style.background = "#FFFFFF";
                     }, 15000);
+
                     clearInterval(interval);
                 }
 
