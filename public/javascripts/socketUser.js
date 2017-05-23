@@ -160,6 +160,11 @@ var elem4 = document.createElement("img");
 elem4.setAttribute("src", "images/zanger.gif");
 elem4.setAttribute("alt", "logo");
 
+var colorDiv = document.createElement("div");
+colorDiv.setAttribute("height", "100vh");
+colorDiv.setAttribute("width", "100vw");
+colorDiv.setAttribute("id", "colors");
+
 document.querySelector("#functionShow").append(emptyText);
 document.querySelector("#functionShow").append(standard);
 
@@ -203,6 +208,7 @@ primus.on("data", function (data) {
                 if (seconds_left <= 0)
                 {
                     document.querySelector("#functionShow").removeChild(elem2);
+                    document.body.append(colorDiv);
                     document.querySelector("header").style.visibility = "hidden";
                     document.getElementById('timer_div').innerHTML = "";
                     document.getElementById('timertext').innerHTML = "";
@@ -216,7 +222,7 @@ primus.on("data", function (data) {
                     function shakeEventDidOccur () {
 
                         function flash() {
-                            var text = document.body;
+                            var text = document.querySelector('#colors');
                             text.style.backgroundColor = (text.style.backgroundColor === 'red') ? 'yellow':'red';
                         }
                          clr = setInterval(flash, 1000);
@@ -226,6 +232,7 @@ primus.on("data", function (data) {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
                         document.querySelector("header").style.visibility = "visible";
+                        document.body.removeChild(colorDiv);
                         myShakeEvent.stop();
                         document.body.style.background = "#FFFFFF";
                     }, 15000);
