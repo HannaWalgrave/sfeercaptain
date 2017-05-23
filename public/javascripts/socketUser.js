@@ -220,18 +220,20 @@ primus.on("data", function (data) {
                             text.style.backgroundColor = (text.style.backgroundColor === 'red') ? 'yellow':'red';
                         }
                         var clr = setInterval(flash, 1000);
+
+
+                        setTimeout(function () {
+                            document.querySelector("#functionShow").append(emptyText);
+                            document.querySelector("#functionShow").append(standard);
+                            document.querySelector("header").style.visibility = "visible";
+                            clearInterval(clr);
+                            myShakeEvent.stop();
+                            document.body.style.background = "#FFFFFF";
+                        }, 15000);
+                        clearInterval(interval);
                     }
 
-                    setTimeout(function () {
-                        document.querySelector("#functionShow").append(emptyText);
-                        document.querySelector("#functionShow").append(standard);
-                        document.querySelector("header").style.visibility = "visible";
-                        function flash () {document.body.style.background = "#FFFFFF";  };
-                        flash();
-                        myShakeEvent.stop();
-                        document.body.style.background = "#FFFFFF";
-                    }, 15000);
-                    clearInterval(interval);
+
                 }
 
             }, 1000);
