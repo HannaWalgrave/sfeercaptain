@@ -226,12 +226,12 @@ primus.on("data", function (data) {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
                         document.querySelector("header").style.visibility = "visible";
-                        clearInterval(clr);
                         myShakeEvent.stop();
                         document.body.style.background = "#FFFFFF";
                     }, 15000);
                     clearInterval(interval);
-
+                    clearInterval(clr);
+                    document.body.style.background = "#FFFFFF";
                 }
 
             }, 1000);
