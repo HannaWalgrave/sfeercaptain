@@ -226,11 +226,10 @@ primus.on("data", function (data) {
                             document.body.style.background = color;
                         }
                         changecolors(); */
-                        var element = document.getElementById("box");
-                        var r = getRandomInt(0, 255);
-                        var g = getRandomInt(0, 255);
-                        var b = getRandomInt(0, 255);
-                        element.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+
+                        var colors = ['yellow', 'red'];
+                        var random_color = colors[Math.floor(Math.random() * colors.length)];
+                        document.body.style.color = random_color;
                     }
 
                     setTimeout(function () {
