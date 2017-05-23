@@ -1,9 +1,9 @@
 {
-  "name": "sfeercaptain",
+  "name": "de12deman",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "engines": {
     "node": "6.10.2"

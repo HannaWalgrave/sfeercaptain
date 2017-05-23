@@ -9,7 +9,7 @@ var user = require('../models/users');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Sfeercaptain' });
+  res.render('index', { title: 'de 12de man' });
 });
 
 
