@@ -26,11 +26,7 @@
     "primus": "^7.0.2",
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2",
-<<<<<<< HEAD
-    "shake": "0.0.9",
     "shake.js": "^1.2.2",
-=======
->>>>>>> 87ec96b24e6714fcdcb8eabef31d9559b2de0716
     "ws": "^3.0.0"
   },
   "main": "app.js",
