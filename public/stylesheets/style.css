@@ -57,7 +57,7 @@ input {
   font-size: 1.2em;
   justify-content: center; }
 
-.functions img {
+.image {
   width: 50%;
   height: auto;
   position: absolute;
@@ -100,7 +100,8 @@ input {
   color: #ffffff;
   font-size: 6vw;
   background: #ed2d17;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
 
 html {
   height: 100vh; }

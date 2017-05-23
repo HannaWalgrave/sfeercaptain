@@ -139,6 +139,7 @@ primus = Primus.connect("", {
 var standard = document.createElement("img");
 standard.setAttribute("src", "images/EmptyState.gif");
 standard.setAttribute("alt", "logo");
+standard.setAttribute("class","image");
 
 var emptyText = document.createElement("h2");
 var t = document.createTextNode('geniet van de match');
@@ -147,18 +148,22 @@ emptyText.appendChild(t);
 var elem = document.createElement("img");
 elem.setAttribute("src", "images/klappen.gif");
 elem.setAttribute("alt", "logo");
+elem.setAttribute("class","image");
 
 var elem2 = document.createElement("img");
 elem2.setAttribute("src", "images/voetballer.gif");
 elem2.setAttribute("alt", "logo");
+elem2.setAttribute("class","image");
 
 var elem3 = document.createElement("img");
 elem3.setAttribute("src", "images/wave.gif");
 elem3.setAttribute("alt", "logo");
+elem3.setAttribute("class","image");
 
 var elem4 = document.createElement("img");
 elem4.setAttribute("src", "images/zanger.gif");
 elem4.setAttribute("alt", "logo");
+elem4.setAttribute("class","image");
 
 var logo = document.createElement("img");
 logo.setAttribute("src", "images/logo.svg");
