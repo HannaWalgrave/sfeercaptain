@@ -214,29 +214,6 @@ primus.on("data", function (data) {
                     myShakeEvent.start();
                     window.addEventListener('shake', shakeEventDidOccur, false);
                     function shakeEventDidOccur () {
-                        //put your own code here etc.
-                        /*var x;
-
-                        function changecolors() {
-                            x = 1;
-                            var c =setInterval(change, 1000);
-                        }
-                        function change() {
-                            if (x === 1) {
-                                color = "red";
-                                x = 2;
-                            }
-                            if (x === 2){
-                                color = "yellow";
-                                x = 1;
-                            }
-                            else {
-                                color = "#FFFFFF";
-                            }
-
-                            document.body.style.background = color;
-                        }
-                        changecolors();*/
 
                         function flash() {
                             var text = document.body;
@@ -249,7 +226,8 @@ primus.on("data", function (data) {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
                         document.querySelector("header").style.visibility = "visible";
-
+                        function flash () {document.body.style.background = "#FFFFFF";  };
+                        flash();
                         myShakeEvent.stop();
                         document.body.style.background = "#FFFFFF";
                     }, 15000);
