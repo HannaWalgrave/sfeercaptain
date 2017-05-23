@@ -140,7 +140,7 @@ var standard = document.createElement("img");
 standard.setAttribute("src", "images/EmptyState.gif");
 standard.setAttribute("alt", "logo");
 
-var emptyText = document.createElement("h1");
+var emptyText = document.createElement("h2");
 var t = document.createTextNode('geniet van de match');
 emptyText.appendChild(t);
 
