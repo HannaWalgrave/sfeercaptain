@@ -160,10 +160,16 @@ var elem4 = document.createElement("img");
 elem4.setAttribute("src", "images/zanger.gif");
 elem4.setAttribute("alt", "logo");
 
+var logo = document.createElement("img");
+logo.setAttribute("src", "images/logo.svg");
+logo.setAttribute("alt", "logo");
+
 var colorDiv = document.createElement("div");
-colorDiv.setAttribute("height", "100vh");
-colorDiv.setAttribute("width", "100vw");
+colorDiv.setAttribute("height", "100%");
+colorDiv.setAttribute("width", "100%");
 colorDiv.setAttribute("id", "colors");
+colorDiv.setAttribute("display", "block");
+colorDiv.appendChild(logo);
 
 document.querySelector("#functionShow").append(emptyText);
 document.querySelector("#functionShow").append(standard);
@@ -207,6 +213,7 @@ primus.on("data", function (data) {
                 document.querySelector("#functionShow").append(elem2);
                 if (seconds_left <= 0)
                 {
+                    document.querySelector("#functionShow").removeChild(elem2);
                     document.querySelector("#functionShow").append(colorDiv);
                     document.querySelector("header").style.visibility = "hidden";
                     document.getElementById('timer_div').innerHTML = "";
@@ -230,7 +237,7 @@ primus.on("data", function (data) {
                     setTimeout(function () {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
-                        document.querySelector("#functionShow").removeChild(elem2);
+
                         document.querySelector("header").style.visibility = "visible";
                         document.querySelector("#functionShow").removeChild(colorDiv);
                         myShakeEvent.stop();
