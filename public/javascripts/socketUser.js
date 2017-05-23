@@ -214,26 +214,35 @@ primus.on("data", function (data) {
                     myShakeEvent.start();
                     window.addEventListener('shake', shakeEventDidOccur, false);
                     function shakeEventDidOccur () {
+                        var second = 10;
+
+                        --second;
 
                         function flash() {
                             var text = document.body;
                             text.style.backgroundColor = (text.style.backgroundColor === 'red') ? 'yellow':'red';
                         }
-                        var clr = setInterval(flash, 1000);
 
-
-                        setTimeout(function () {
-                            document.querySelector("#functionShow").append(emptyText);
-                            document.querySelector("#functionShow").append(standard);
-                            document.querySelector("header").style.visibility = "visible";
+                        if (second > 0){
+                            var clr = setInterval(flash, 1000);
                             clearInterval(clr);
-                            myShakeEvent.stop();
+                        }
+                        else
+                        {
+
                             document.body.style.background = "#FFFFFF";
-                        }, 15000);
-                        clearInterval(interval);
+                        }
+
+
                     }
-
-
+                    setTimeout(function () {
+                        document.querySelector("#functionShow").append(emptyText);
+                        document.querySelector("#functionShow").append(standard);
+                        document.querySelector("header").style.visibility = "visible";
+                        myShakeEvent.stop();
+                        document.body.style.background = "#FFFFFF";
+                    }, 15000);
+                    clearInterval(interval);
                 }
 
             }, 1000);
