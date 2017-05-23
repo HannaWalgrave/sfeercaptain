@@ -46,7 +46,11 @@ header {
 
 input {
   border: none;
+<<<<<<< HEAD
   background-color: #ffffff;
+=======
+  background-color: #FFFFFF;
+>>>>>>> 87ec96b24e6714fcdcb8eabef31d9559b2de0716
   margin-left: 0.5em;
   padding: 0.5em; }
 
@@ -61,11 +65,19 @@ input {
   width: 30%;
   margin: 0.2em;
   border-radius: 5px;
+<<<<<<< HEAD
   background-color: #ffffff; }
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #ffffff;
+=======
+  background-color: #FFFFFF; }
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #FFFFFF;
+>>>>>>> 87ec96b24e6714fcdcb8eabef31d9559b2de0716
   color: black; }
 
 a {
