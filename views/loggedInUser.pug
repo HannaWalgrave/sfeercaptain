@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  div#box(style="background-color: rgb(216, 224, 134"))
+  div#box(style={background:" rgb(216, 224, 134)"})
     header
       h1.pagename Welkom #{name}
     h1#timertext
@@ -10,5 +10,5 @@ block content
 
 
 
-script(src='/primus/primus.js')
-script(src="/javascripts/socketUser.js")
+  script(src='/primus/primus.js')
+  script(src="/javascripts/socketUser.js")
