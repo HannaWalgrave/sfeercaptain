@@ -207,8 +207,7 @@ primus.on("data", function (data) {
                 document.querySelector("#functionShow").append(elem2);
                 if (seconds_left <= 0)
                 {
-                    document.querySelector("#functionShow").removeChild(elem2);
-                    document.body.append(colorDiv);
+                    document.querySelector("#functionShow").append(colorDiv);
                     document.querySelector("header").style.visibility = "hidden";
                     document.getElementById('timer_div').innerHTML = "";
                     document.getElementById('timertext').innerHTML = "";
@@ -225,20 +224,19 @@ primus.on("data", function (data) {
                             var text = document.querySelector('#colors');
                             text.style.backgroundColor = (text.style.backgroundColor === 'red') ? 'yellow':'red';
                         }
-                         clr = setInterval(flash, 1000);
+                        setInterval(flash, 1000);
 
                     }
                     setTimeout(function () {
                         document.querySelector("#functionShow").append(emptyText);
                         document.querySelector("#functionShow").append(standard);
+                        document.querySelector("#functionShow").removeChild(elem2);
                         document.querySelector("header").style.visibility = "visible";
-                        document.body.removeChild(colorDiv);
+                        document.querySelector("#functionShow").removeChild(colorDiv);
                         myShakeEvent.stop();
                         document.body.style.background = "#FFFFFF";
                     }, 15000);
                     clearInterval(interval);
-                    clearInterval(clr);
-                    document.body.style.background = "#FFFFFF";
                 }
 
             }, 1000);
