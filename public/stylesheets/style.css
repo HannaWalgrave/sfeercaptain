@@ -27,7 +27,6 @@ header {
   justify-content: center;
   background-image: url("../images/header.png");
   align-content: center;
-  justify-content: center;
   margin-bottom: 2em;
   height: 130px;
   background-repeat: no-repeat; }
@@ -53,17 +52,23 @@ input {
 
 .functions {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   text-align: center;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  justify-content: center; }
 
 .functions img {
-  height: 55vh; }
+  width: 50%;
+  height: auto;
+  position: absolute;
+  margin-top: 40%;
+  margin-left: 20%;
+  z-index: 1000; }
 
 .timer {
   display: flex;
   align-content: center;
+  justify-content: center;
   flex-direction: row; }
 
 .containerbtn {
