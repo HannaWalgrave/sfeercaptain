@@ -73,13 +73,12 @@ input {
   align-content: center;
   text-align: center;
   margin: 20px;
-  height: 100px;
-  width: 100px;
+  height: 25vh;
+  width: 25vw;
   border-radius: 12px;
   color: #ffffff;
-  font-size: 2em;
+  font-size: 6vw;
   background: #ed2d17;
-  padding: 20px 20px 20px 20px;
   text-decoration: none; }
 
 html {
@@ -102,8 +101,7 @@ a {
 
 h1 {
   color: black;
-  font-size: 2em;
-  margin-top: 2em; }
+  font-size: 2em; }
 
 p {
   color: black;
