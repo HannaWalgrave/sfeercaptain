@@ -152,6 +152,14 @@ var elem2 = document.createElement("img");
 elem2.setAttribute("src", "images/voetballer.gif");
 elem2.setAttribute("alt", "logo");
 
+var elem3 = document.createElement("img");
+elem3.setAttribute("src", "images/wave.gif");
+elem3.setAttribute("alt", "logo");
+
+var elem4 = document.createElement("img");
+elem4.setAttribute("src", "images/zanger.gif");
+elem4.setAttribute("alt", "logo");
+
 document.querySelector("#functionShow").append(emptyText);
 document.querySelector("#functionShow").append(standard);
 
@@ -165,11 +173,14 @@ primus.on("data", function (data) {
                 navigator.vibrate(1000);
                 document.getElementById('timertext').innerHTML = "We beginnen in: ";
                 document.getElementById('timer_div').innerHTML = --seconds_left;
+                document.querySelector("#functionShow").append(elem);
                 if (seconds_left <= 0)
                 {
                     document.getElementById('timer_div').innerHTML = "";
                     document.getElementById('timertext').innerHTML = "";
-                    document.querySelector("#functionShow").append(elem);
+                    navigator.vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
+
+
                     setTimeout(function () {
                         document.querySelector("#functionShow").removeChild(elem);
                         document.querySelector("#functionShow").append(emptyText);
@@ -204,7 +215,7 @@ primus.on("data", function (data) {
                     window.addEventListener('shake', shakeEventDidOccur, false);
                     function shakeEventDidOccur () {
                         //put your own code here etc.
-                        /*var x;
+                        var x;
 
                         function changecolors() {
                             x = 1;
@@ -225,11 +236,7 @@ primus.on("data", function (data) {
 
                             document.body.style.background = color;
                         }
-                        changecolors(); */
-
-                        var colors = ['#FFFF00', '#FF0000'];
-                        var random_color = colors[Math.floor(Math.random() * colors.length)];
-                        document.body.style.color = random_color;
+                        changecolors();
                     }
 
                     setTimeout(function () {
@@ -247,6 +254,49 @@ primus.on("data", function (data) {
             }, 1000);
 
         }
+        if(data.message == 'function3') {
+            var seconds_left = 10;
+            var interval = setInterval(function () {
+                navigator.vibrate(1000);
+                document.getElementById('timertext').innerHTML = "We beginnen in: ";
+                document.getElementById('timer_div').innerHTML = --seconds_left;
+                document.querySelector("#functionShow").append(elem3);
+                if (seconds_left <= 0) {
+                    document.getElementById('timer_div').innerHTML = "";
+                    document.getElementById('timertext').innerHTML = "";
+
+                    setTimeout(function () {
+                        document.querySelector("#functionShow").removeChild(elem3);
+                        document.querySelector("#functionShow").append(emptyText);
+                        document.querySelector("#functionShow").append(standard);
+                    }, 5000);
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
+
+        if(data.message == 'function4') {
+            var seconds_left = 10;
+            var interval = setInterval(function () {
+                navigator.vibrate(1000);
+                document.getElementById('timertext').innerHTML = "We beginnen in: ";
+                document.getElementById('timer_div').innerHTML = --seconds_left;
+                document.querySelector("#functionShow").append(elem4);
+                if (seconds_left <= 0) {
+                    document.getElementById('timer_div').innerHTML = "";
+                    document.getElementById('timertext').innerHTML = "";
+
+                    setTimeout(function () {
+                        document.querySelector("#functionShow").removeChild(elem4);
+                        document.querySelector("#functionShow").append(emptyText);
+                        document.querySelector("#functionShow").append(standard);
+                    }, 5000);
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
+
+
         else {
             console.log('i fucked up');
         }

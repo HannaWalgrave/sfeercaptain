@@ -168,6 +168,26 @@ document.querySelector('#Function2').addEventListener("click", function (e) {
     e.preventDefault;
 });
 
+document.querySelector('#Function3').addEventListener("click", function (e) {
+    primus.write({message: 'function3'});
+    navigator.vibrate(1000);
+    color();
+    setTimeout(function () {
+        colorshow();
+    },15000);
+    e.preventDefault;
+});
+
+document.querySelector('#Function4').addEventListener("click", function (e) {
+    primus.write({message: 'function4'});
+    navigator.vibrate(1000);
+    color();
+    setTimeout(function () {
+        colorshow();
+    },15000);
+    e.preventDefault;
+});
+
 primus.on("data", function (data) {
     console.log(data);
 });
